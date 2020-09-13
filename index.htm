@@ -148,16 +148,20 @@
 
     sampleCommand.addEventListener("click", event => {
       commandText.value = "::warning::XUnitTestProject.UnitTests.Test%0A%0AFramework: .NETCoreApp 3.1.0%0APlatform: X64%0A%0AStandard Output Messages:%0A%0ATesting...%0A%0ADuration: 1ms";
-      commandText.focus();
       previewButton.dispatchEvent(new MouseEvent("click"));
     });
 
     previewButton.addEventListener("click", event => {
+      let command;
+
       try {
-        parseCommand(commandText.value);
+        command = parseCommand(commandText.value);
       } catch {
         alert("Invalid command format");
+        return;
       }
+
+      populateTemplate(command);
     });
 
     function parseCommand(command) {
@@ -165,17 +169,15 @@
         return;
       }
 
-      const [, typeDetails, message] = command.split("::");
+      const [, typeDetails, messageDetails] = command.split("::");
       const [type, attributeDetails] = typeDetails.split(" ");
       const attributes = (attributeDetails || "").split(",");
 
-      const template = document.querySelector(type === "error" ? ".js-preview-template-error" : ".js-preview-template-warning");
-      const annotation = template.content.cloneNode(true);
-
-      annotation.querySelector(".js-preview-message").textContent = decodeURIComponent(message);
-
       let file = ".github";
       let line = 1;
+      let col = 1;
+      const message = decodeURIComponent(messageDetails);
+
       attributes.forEach(attribute => {
         const [key, val] = attribute.split("=");
 
@@ -184,12 +186,20 @@
         } else if (key === "line") {
           line = decodeURIComponent(val);
         } else if (key === "col") {
-          line = decodeURIComponent(val);
+          col = decodeURIComponent(val);
         }
       });
 
+      return {  type, file, line, col, message };
+    }
+
+    function populateTemplate({ type, file, line, col, message }) {
+      const template = document.querySelector(type === "error" ? ".js-preview-template-error" : ".js-preview-template-warning");
+      const annotation = template.content.cloneNode(true);
+
       annotation.querySelectorAll(".js-preview-file").forEach(element => element.innerText = file);
       annotation.querySelectorAll(".js-preview-line").forEach(element => element.innerText = line);
+      annotation.querySelector(".js-preview-message").textContent = message;
 
       container.innerHTML = "";
       container.appendChild(annotation);
