@@ -8,7 +8,7 @@
   <link media="all" rel="stylesheet" href="github.css">
 </head>
 <body class="d-flex flex-column height-full">
-  <main class="container my-6 px-4 flex-1">
+  <main class="container my-6 px-3 px-md-4 px-lg-5 flex-1">
 
     <h1>GitHub Actions annotation previewer</h1>
     <p>
@@ -38,7 +38,7 @@
 
   </main>
 
-  <footer class="container px-4">
+  <footer class="container px-3 px-md-4 px-lg-5">
     <p>
       Built by <a href="https://github.com/xt0rted">xt0rted</a>,
       view on <a href="https://github.com/xt0rted/annotation-previewer">GitHub</a>
@@ -52,11 +52,11 @@
           <svg class="octicon octicon-x text-red" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
         </span>
 
-        <a class="text-gray-light d-inline-block ml-1">Check failure on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
+        <a class="text-gray-light d-inline-block ml-1 cursor-pointer">Check failure on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
       </p>
 
       <div class="annotation-actions position-absolute">
-        <a class="tooltipped tooltipped-w d-inline-block ml-2" aria-label="See this annotation in the file changed.">
+        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="See this annotation in the file changed.">
           <svg class="octicon octicon-file-code text-gray-light" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z"></path></svg>
         </a>
       </div>
@@ -85,11 +85,11 @@
           <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
         </span>
 
-        <a class="text-gray-light d-inline-block ml-1">Check warning on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
+        <a class="text-gray-light d-inline-block ml-1 cursor-pointer">Check warning on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
       </p>
 
       <div class="annotation-actions position-absolute">
-        <a class="tooltipped tooltipped-w d-inline-block ml-2" aria-label="See this annotation in the file changed.">
+        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="See this annotation in the file changed.">
           <svg class="octicon octicon-file-code text-gray-light" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z"></path></svg>
         </a>
       </div>
