@@ -16,7 +16,7 @@
     </p>
 
     <div class="js-preview-container mt-6">
-      <div class="border rounded-1">
+      <div class="Box">
         <div class="blankslate">
           <svg class="octicon octicon-file-code blankslate-icon" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z"></path></svg>
           <h3 class="mb-1">No preview</h3>
@@ -25,40 +25,42 @@
       </div>
     </div>
 
-    <details class="d-none js-debug-details">
+    <details class="d-none mt-4 js-debug-details">
       <summary class="btn btn-sm" aria-label="Toggle annotation details">Details</summary>
-      <div class="p-3 mt-2 border rounded-2">
-        <h3 class="sr-only">Annotation details</h3>
-        <div class="form-group">
-          <div class="form-group-header">
-            <label id="debug-file-label">File</label>
+      <div class="mt-4 Box bg-gray-light">
+        <div class="Box-body">
+          <h3 class="sr-only">Annotation details</h3>
+          <div class="form-group">
+            <div class="form-group-header">
+              <label id="debug-file-label">File</label>
+            </div>
+            <div class="form-group-body">
+              <pre aria-labelledby="debug-file-label"><code class="js-debug-file"></code></pre>
+            </div>
           </div>
-          <div class="form-group-body">
-            <pre aria-labelledby="debug-file-label"><code class="js-debug-file"></code></pre>
+          <div class="form-group">
+            <div class="form-group-header">
+              <label id="debug-line">Line</label>
+            </div>
+            <div class="form-group-body">
+              <pre aria-labelledby="debug-line"><code class="js-debug-line"></code></pre>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="form-group-header">
-            <label id="debug-line">Line</label>
+          <div class="form-group">
+            <div class="form-group-header">
+              <label id="debug-col">Col</label>
+            </div>
+            <div class="form-group-body">
+              <pre aria-labelledby="debug-col"><code class="js-debug-col"></code></pre>
+            </div>
           </div>
-          <div class="form-group-body">
-            <pre aria-labelledby="debug-line"><code class="js-debug-line"></code></pre>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-group-header">
-            <label id="debug-col">Col</label>
-          </div>
-          <div class="form-group-body">
-            <pre aria-labelledby="debug-col"><code class="js-debug-col"></code></pre>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-group-header">
-            <label id="debug-message">Message</label>
-          </div>
-          <div class="form-group-body">
-            <pre aria-labelledby="debug-message"><code class="js-debug-message"></code></pre>
+          <div class="form-group">
+            <div class="form-group-header">
+              <label id="debug-message">Message</label>
+            </div>
+            <div class="form-group-body">
+              <pre aria-labelledby="debug-message"><code class="js-debug-message"></code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -85,7 +87,7 @@
   </footer>
 
   <template class="js-preview-template-error">
-    <div class="Details js-details-container Box position-relative check-annotation check-annotation-failure my-2">
+    <div class="Details js-details-container Box position-relative check-annotation check-annotation-failure">
       <p class="text-small pl-3 my-2">
         <span class="annotation-octicon text-center d-inline-block">
           <svg class="octicon octicon-x text-red" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
@@ -118,7 +120,7 @@
   </template>
 
   <template class="js-preview-template-warning">
-    <div class="Details js-details-container Box position-relative check-annotation check-annotation-warning my-2">
+    <div class="Details js-details-container Box position-relative check-annotation check-annotation-warning">
       <p class="text-small pl-3 my-2">
         <span class="annotation-octicon text-center d-inline-block">
           <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
