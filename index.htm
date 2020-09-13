@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="height-full" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,13 @@
   <link media="all" rel="stylesheet" href="frameworks.css">
   <link media="all" rel="stylesheet" href="github.css">
 </head>
-<body>
-
-  <div class="container my-6 px-4">
+<body class="d-flex flex-column height-full">
+  <main class="container my-6 px-4 flex-1">
 
     <h1>GitHub Actions annotation previewer</h1>
+    <p>
+      Easily preview <a href="https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message">error</a> and <a href="https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-a-warning-message">warning</a> annotation commands without having to run a workflow.
+    </p>
 
     <div class="js-preview-container mt-6">
       <div class="border rounded-1">
@@ -34,7 +36,14 @@
       </div>
     </div>
 
-  </div>
+  </main>
+
+  <footer class="container px-4">
+    <p>
+      Built by <a href="https://github.com/xt0rted">xt0rted</a>,
+      view on <a href="https://github.com/xt0rted/annotation-previewer">GitHub</a>
+    </p>
+  </footer>
 
   <template class="js-preview-template-error">
     <div class="Details js-details-container Box position-relative check-annotation check-annotation-failure my-2">
