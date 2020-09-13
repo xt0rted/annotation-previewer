@@ -1,0 +1,52 @@
+.check-annotation {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0
+}
+
+.check-annotation:after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  display: block;
+  width: 4px;
+  content: " "
+}
+
+.check-annotation .annotation-actions {
+  top: 4px;
+  right: 8px
+}
+
+.check-annotation .annotation-octicon {
+  width: 16px
+}
+
+.check-annotation.Details--on .Details-content--hidden {
+  display: block !important
+}
+
+.annotation-title {
+  word-break: break-all
+}
+
+.check-annotation-failure:after {
+  background-color: #d73a49
+}
+
+.check-annotation-failure .annotation-title {
+  color: #d73a49
+}
+
+.check-annotation-warning:after {
+  background-color: #ffd33d
+}
+
+.check-annotation-warning .octicon-alert {
+  color: #dbab09
+}
+
+.check-annotation-warning .annotation-title {
+  color: #b08800
+}
