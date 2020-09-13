@@ -1,3 +1,12 @@
+body.intent-mouse [role=button]:focus,
+body.intent-mouse [role=tabpanel][tabindex="0"]:focus,
+body.intent-mouse a:focus,
+body.intent-mouse button:focus,
+body.intent-mouse summary:focus {
+  outline: none;
+  box-shadow: none
+}
+
 .check-annotation {
   border-left: 0;
   border-top-left-radius: 0;
