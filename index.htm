@@ -112,6 +112,35 @@
   </template>
 
   <script>
+    /**
+     * Toggles the intent-mouse class on the body which is used to hide the focus outlines for mouse interactions
+     */
+    (function() {
+      let intentMouse = false;
+      let activeElement;
+
+      function setIntent() {
+        activeElement = document.activeElement;
+        document.body.classList.toggle("intent-mouse", intentMouse);
+      }
+
+      document.addEventListener("mousedown", () => {
+        intentMouse = true;
+
+        if (activeElement === document.activeElement) {
+          setIntent();
+        }
+      });
+
+      document.addEventListener("keydown", () => {
+        intentMouse = false;
+      });
+
+      document.addEventListener("focusin", setIntent);
+    })();
+  </script>
+
+  <script>
     const container = document.querySelector(".js-preview-container");
     const commandText = document.querySelector(".js-command-text");
     const previewButton = document.querySelector(".js-btn-preview");
