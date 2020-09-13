@@ -25,7 +25,46 @@
       </div>
     </div>
 
-    <div class="mt-6">
+    <details class="d-none js-debug-details">
+      <summary class="btn btn-sm" aria-label="Toggle annotation details">Details</summary>
+      <div class="p-3 mt-2 border rounded-2">
+        <h3 class="sr-only">Annotation details</h3>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label id="debug-file-label">File</label>
+          </div>
+          <div class="form-group-body">
+            <pre aria-labelledby="debug-file-label"><code class="js-debug-file"></code></pre>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label id="debug-line">Line</label>
+          </div>
+          <div class="form-group-body">
+            <pre aria-labelledby="debug-line"><code class="js-debug-line"></code></pre>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label id="debug-col">Col</label>
+          </div>
+          <div class="form-group-body">
+            <pre aria-labelledby="debug-col"><code class="js-debug-col"></code></pre>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-group-header">
+            <label id="debug-message">Message</label>
+          </div>
+          <div class="form-group-body">
+            <pre aria-labelledby="debug-message"><code class="js-debug-message"></code></pre>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <div class="mt-4">
       <div class="form-group">
         <textarea class="js-command-text form-control" placeholder="Paste command here..."></textarea>
       </div>
@@ -146,6 +185,12 @@
     const previewButton = document.querySelector(".js-btn-preview");
     const sampleCommand = document.querySelector(".js-btn-sample");
 
+    const debugDetails = document.querySelector(".js-debug-details");
+    const debugFile = document.querySelector(".js-debug-file");
+    const debugLine = document.querySelector(".js-debug-line");
+    const debugCol = document.querySelector(".js-debug-col");
+    const debugMessage = document.querySelector(".js-debug-message");
+
     sampleCommand.addEventListener("click", event => {
       commandText.value = "::warning::XUnitTestProject.UnitTests.Test%0A%0AFramework: .NETCoreApp 3.1.0%0APlatform: X64%0A%0AStandard Output Messages:%0A%0ATesting...%0A%0ADuration: 1ms";
       previewButton.dispatchEvent(new MouseEvent("click"));
@@ -162,6 +207,7 @@
       }
 
       populateTemplate(command);
+      populateDebugDetails(command);
     });
 
     function parseCommand(command) {
@@ -203,6 +249,15 @@
 
       container.innerHTML = "";
       container.appendChild(annotation);
+    }
+
+    function populateDebugDetails({ file, line, col, message }) {
+      debugFile.innerText = file;
+      debugLine.innerText = line;
+      debugCol.innerText = col;
+      debugMessage.innerText = message;
+
+      debugDetails.classList.remove("d-none");
     }
   </script>
 </body>
