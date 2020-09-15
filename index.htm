@@ -87,7 +87,10 @@
 
     <div class="mt-4">
       <div class="form-group">
-        <textarea class="js-command-text form-control" placeholder="Paste command here..."></textarea>
+        <textarea class="js-command-text form-control" aria-describedby="command-text-description" placeholder="Paste command here..."></textarea>
+        <p class="note" id="command-text-description">
+          Commands use the format <code>::{type} file={name},line={line},col={col}::{message}</code>
+        </p>
       </div>
 
       <div class="form-actions">
