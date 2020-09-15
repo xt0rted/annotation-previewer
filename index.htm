@@ -43,6 +43,14 @@
           <h3 class="sr-only">Annotation details</h3>
           <div class="form-group">
             <div class="form-group-header">
+              <label id="debug-type-label">Type</label>
+            </div>
+            <div class="form-group-body">
+              <pre aria-labelledby="debug-type-label"><code class="js-debug-type"></code></pre>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-group-header">
               <label id="debug-file-label">File</label>
             </div>
             <div class="form-group-body">
@@ -199,6 +207,7 @@
     const sampleCommand = document.querySelector(".js-btn-sample");
 
     const debugDetails = document.querySelector(".js-debug-details");
+    const debugType = document.querySelector(".js-debug-type");
     const debugFile = document.querySelector(".js-debug-file");
     const debugLine = document.querySelector(".js-debug-line");
     const debugCol = document.querySelector(".js-debug-col");
@@ -264,7 +273,8 @@
       container.appendChild(annotation);
     }
 
-    function populateDebugDetails({ file, line, col, message }) {
+    function populateDebugDetails({ type, file, line, col, message }) {
+      debugType.innerText = type;
       debugFile.innerText = file;
       debugLine.innerText = line;
       debugCol.innerText = col;
