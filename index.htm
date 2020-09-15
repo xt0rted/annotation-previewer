@@ -217,8 +217,7 @@
     const debugMessage = document.querySelector(".js-debug-message");
 
     sampleCommand.addEventListener("click", event => {
-      commandText.value = "::warning::XUnitTestProject.UnitTests.Test%0A%0AFramework: .NETCoreApp 3.1.0%0APlatform: X64%0A%0AStandard Output Messages:%0A%0ATesting...%0A%0ADuration: 1ms";
-      previewButton.dispatchEvent(new MouseEvent("click"));
+      setAndPreviewCommand("::warning::XUnitTestProject.UnitTests.Test%0A%0AFramework: .NETCoreApp 3.1.0%0APlatform: X64%0A%0AStandard Output Messages:%0A%0ATesting...%0A%0ADuration: 1ms");
     });
 
     previewButton.addEventListener("click", event => {
@@ -231,9 +230,30 @@
         return;
       }
 
-      populateTemplate(command);
-      populateDebugDetails(command);
+      if (command) {
+        populateTemplate(command);
+        populateDebugDetails(command);
+      }
+
+      updateUrl(commandText.value);
     });
+
+    function setAndPreviewCommand(command) {
+      commandText.value = command;
+      previewButton.dispatchEvent(new MouseEvent("click"));
+    }
+
+    function updateUrl(command) {
+      if (history.pushState) {
+        let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+
+        if (command) {
+          newUrl += "?command=" + encodeURI(command);
+        }
+
+        window.history.replaceState({ path: newUrl }, "", newUrl);
+      }
+    }
 
     function parseCommand(command) {
       if (!command) {
@@ -285,6 +305,17 @@
 
       debugDetails.classList.remove("d-none");
     }
+
+    function loadFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const command = params.get("command");
+
+      if (command) {
+        setAndPreviewCommand(command);
+      }
+    }
+
+    loadFromUrl();
   </script>
 </body>
 </html>
