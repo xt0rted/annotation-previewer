@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,58 @@
     <p>
       Easily preview <a href="https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message">error</a> and <a href="https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-a-warning-message">warning</a> annotation commands without having to run a workflow.
     </p>
+
+    <div class="mt-6">
+      <div class="py-2 text-bold js-color-mode" aria-hidden="true">
+        Light default
+      </div>
+
+      <div class="d-flex flex-wrap mb-n2" role="radiogroup" aria-label="Theme picker">
+        <input class="hidden-radio-input" id="option-theme-light" type="radio" name="theme" data-type="light" data-mode="auto" value="light" data-theme="light" aria-label="Light default" checked>
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-light" title="Light default" data-theme="light" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Light default" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/light_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-light_high_contrast" type="radio" name="theme" data-type="light" data-mode="auto" value="light_high_contrast" data-theme="light_high_contrast" aria-label="Light high contrast">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-light_high_contrast" title="Light high contrast" data-theme="light_high_contrast" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Light high contrast" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/light_high_contrast_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-light_colorblind" type="radio" name="theme" data-type="light" data-mode="auto" value="light_colorblind" data-theme="light_colorblind" aria-label="Light colorblind">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-light_colorblind" title="Light colorblind" data-theme="light_colorblind" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Light colorblind" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/light_colorblind_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-dark" type="radio" name="theme" data-type="dark" data-mode="auto" value="dark" data-theme="dark" aria-label="Dark default">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-dark" title="Dark default" data-theme="dark" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Dark default" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/dark_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-dark_high_contrast" type="radio" name="theme" data-type="dark" data-mode="auto" value="dark_high_contrast" data-theme="dark_high_contrast" aria-label="Dark high contrast">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-dark_high_contrast" title="Dark high contrast" data-theme="dark_high_contrast" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Dark high contrast" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/dark_high_contrast_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-dark_colorblind" type="radio" name="theme" data-type="dark" data-mode="auto" value="dark_colorblind" data-theme="dark_colorblind" aria-label="Dark colorblind">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-dark_colorblind" title="Dark colorblind" data-theme="dark_colorblind" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1
+              mb-n1 mr-n1 ml-n1">
+            <img alt="Dark colorblind" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/dark_colorblind_disc.svg">
+          </span>
+        </label>
+        <input class="hidden-radio-input" id="option-theme-dark_dimmed" type="radio" name="theme" data-type="dark" data-mode="auto" value="dark_dimmed" data-theme="dark_dimmed" aria-label="Dark dimmed">
+        <label class="radio-label-theme-discs circle radio-label m-0 mr-2 mb-2 d-flex flex-items-center flex-justify-center overflow-hidden color-bg-subtle flex-grow-0 flex-shrink-0" style="width:40px;height:40px;border-width:2px;" for="option-theme-dark_dimmed" title="Dark dimmed" data-theme="dark_dimmed" aria-hidden="true">
+          <span class="border circle d-flex flex-items-center flex-justify-center mt-n1 mb-n1 mr-n1 ml-n1">
+            <img alt="Dark dimmed" width="100%" height="100%" src="https://github.githubassets.com/images/modules/settings/color_modes/dark_dimmed_disc.svg">
+          </span>
+        </label>
+      </div>
+    </div>
 
     <div class="js-preview-container mt-6">
       <div class="Box">
@@ -175,6 +227,34 @@
   </template>
 
   <script>
+    (function() {
+      const html = document.querySelector("html");
+      const themeLabel = document.querySelector(".js-color-mode");
+
+      document.querySelectorAll("input[type=radio]").forEach(el => {
+        el.addEventListener("change", e => {
+          const mode = el.getAttribute("data-type");
+
+          html.setAttribute("data-color-mode", mode);
+          themeLabel.textContent = el.getAttribute("aria-label");
+
+          if (mode === "light") {
+            html.setAttribute("data-light-theme", el.value);
+          } else {
+            html.setAttribute("data-dark-theme", el.value);
+          }
+        });
+      });
+
+      const colorMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      const defaultTheme = document.querySelector(`#option-theme-${colorMode}`);
+
+      defaultTheme.checked = true;
+      defaultTheme.dispatchEvent(new Event("change"));
+    })();
+  </script>
+
+  <script>
     /**
      * Toggles the intent-mouse class on the body which is used to hide the focus outlines for mouse interactions
      */
@@ -292,7 +372,7 @@
       annotation.querySelectorAll(".js-preview-line").forEach(element => element.innerText = line);
       annotation.querySelector(".js-preview-message").textContent = message;
 
-      container.innerHTML = "";
+      container.innerText = "";
       container.appendChild(annotation);
     }
 

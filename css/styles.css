@@ -7,6 +7,23 @@ body.intent-mouse summary:focus {
   box-shadow: none
 }
 
+.radio-label-theme-discs {
+  padding: 0;
+  transition: padding .25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hidden-radio-input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  appearance: none;
+}
+
+:checked + .radio-label-theme-discs,
+.radio-label-theme-discs:hover {
+  padding: 8px;
+}
+
 .check-annotation {
   border-left: 0;
   border-top-left-radius: 0;
@@ -40,22 +57,22 @@ body.intent-mouse summary:focus {
   word-break: break-all
 }
 
-.check-annotation-failure:after {
-  background-color: #d73a49
+.check-annotation-failure::after {
+  background-color: var(--color-danger-emphasis);
 }
 
 .check-annotation-failure .annotation-title {
-  color: #d73a49
+  color: var(--color-danger-fg);
 }
 
-.check-annotation-warning:after {
-  background-color: #ffd33d
+.check-annotation-warning::after {
+  background-color: var(--color-attention-emphasis);
 }
 
 .check-annotation-warning .octicon-alert {
-  color: #dbab09
+  color: var(--color-attention-fg);
 }
 
 .check-annotation-warning .annotation-title {
-  color: #b08800
+  color: var(--color-attention-fg);
 }
