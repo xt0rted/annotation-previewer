@@ -164,22 +164,28 @@
     <div class="Details js-details-container Box position-relative check-annotation check-annotation-failure">
       <p class="text-small pl-3 my-2">
         <span class="annotation-octicon text-center d-inline-block">
-          <svg class="octicon octicon-x text-red" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
+          <svg class="octicon octicon-x color-fg-danger" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+          </svg>
         </span>
 
-        <a class="text-gray-light d-inline-block ml-1 cursor-pointer">Check failure on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
+        <span class="color-fg-muted d-inline-block ml-1">
+          Check failure on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span>
+        </span>
       </p>
 
       <div class="annotation-actions position-absolute">
-        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="See this annotation in the file changed.">
-          <svg class="octicon octicon-file-code text-gray-light" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z"></path></svg>
+        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="View check run for this annotation">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-checklist color-fg-muted">
+            <path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path>
+          </svg>
         </a>
       </div>
 
-      <p class="ml-3 mb-2 pl-4 mr-2 flex-shrink-0 d-flex flex-items-center">
-        <img src="https://avatars2.githubusercontent.com/in/15368?v=4" width="20" height="20" alt="@github-actions" class="avatar mr-2 flex-shrink-0">
-        <span class="mr-1 text-bold"> github-actions </span> / preview
-      </p>
+      <h4 class="f5 ml-3 mb-2 pl-4 mr-2 flex-shrink-0 d-flex flex-items-center">
+        <img class="avatar mr-2 flex-shrink-0" src="https://avatars.githubusercontent.com/in/15368?s=20&v=4" height="20" width="20" alt="">
+        GitHub Actions <span class="ml-1 text-normal">/ Errors</span>
+      </h4>
 
       <p class="ml-3 mb-0 pl-4 text-bold d-flex flex-items-center">
         <span class="annotation-title flex-auto pr-2">
@@ -187,7 +193,7 @@
         </span>
       </p>
 
-      <div class="py-2 pl-4 ml-3">
+      <div class="py-2 pl-4 ml-3 overflow-auto">
         <code><pre class="js-preview-message"></pre></code>
       </div>
     </div>
@@ -200,19 +206,23 @@
           <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
         </span>
 
-        <a class="text-gray-light d-inline-block ml-1 cursor-pointer">Check warning on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span></a>
+        <span class="color-fg-muted d-inline-block ml-1">
+          Check warning on line <span class="js-preview-line"></span> in <span class="js-preview-file"></span>
+        </span>
       </p>
 
       <div class="annotation-actions position-absolute">
-        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="See this annotation in the file changed.">
-          <svg class="octicon octicon-file-code text-gray-light" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z"></path></svg>
+        <a class="tooltipped tooltipped-w d-inline-block ml-2 cursor-pointer" aria-label="View check run for this annotation">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-checklist color-fg-muted">
+            <path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path>
+          </svg>
         </a>
       </div>
 
-      <p class="ml-3 mb-2 pl-4 mr-2 flex-shrink-0 d-flex flex-items-center">
-        <img src="https://avatars2.githubusercontent.com/in/15368?v=4" width="20" height="20" alt="@github-actions" class="avatar mr-2 flex-shrink-0">
-        <span class="mr-1 text-bold"> github-actions </span> / preview
-      </p>
+      <h4 class="f5 ml-3 mb-2 pl-4 mr-2 flex-shrink-0 d-flex flex-items-center">
+        <img class="avatar mr-2 flex-shrink-0" src="https://avatars.githubusercontent.com/in/15368?s=20&v=4" height="20" width="20" alt="">
+        GitHub Actions <span class="ml-1 text-normal">/ Warnings</span>
+      </h4>
 
       <p class="ml-3 mb-0 pl-4 text-bold d-flex flex-items-center">
         <span class="annotation-title flex-auto pr-2">
@@ -220,7 +230,7 @@
         </span>
       </p>
 
-      <div class="py-2 pl-4 ml-3">
+      <div class="py-2 pl-4 ml-3 overflow-auto">
         <code><pre class="js-preview-message"></pre></code>
       </div>
     </div>
